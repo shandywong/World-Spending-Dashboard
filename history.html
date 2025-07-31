@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Spending Table</title>
+  <link rel="icon" type="image/jpeg" href="/images/earth.jpeg">
+  <link rel="stylesheet" href="spending.css">
+  <!-- PapaParse -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
+    <img src="/images/home.jpeg" class="logo" alt="Logo">
+    <h2>Menu</h2>
+    <a href="spending.html">Dashboard</a>
+    <a href="history.html">Cost Table</a>
+  </div>
+
+  <div class="main-content" id="mainContent">
+    <div class="navbar">
+      <button class="open-btn" onclick="toggleSidebar()">☰</button>
+      <div class="nav-left">
+        <h1>Spending Data Table</h1>
+      </div>
+    </div>
+
+    <table id="dataTable" class="display">
+  <thead>
+    <tr>
+       <th data-column="Country">Country <span class="sort-arrow"></span></th>
+      <th data-column="Year">Year <span class="sort-arrow"></span></th>
+      <th data-column="Average_Monthly_Income">Income <span class="sort-arrow"></span></th>
+      <th data-column="Cost_of_Living">Cost <span class="sort-arrow"></span></th>
+      <th data-column="Region">Region <span class="sort-arrow"></span></th>
+    </tr>
+    <tr class="filter-row">
+      <th>
+        <select id="countryFilter">
+          <option value="all">All</option>
+          <option value="Mexico">Mexico</option>
+          <option value="United States">United States</option>
+          <option value="Japan">Japan</option>
+          <option value="Australia">Australia</option>
+          <option value="South Africa">South Africa</option>
+        </select>
+      </th>
+      <th>
+        <select id="yearFilter">
+          <option value="all">All</option>
+          <option value="2000-2005">2000-2005</option>
+          <option value="2006-2010">2006-2010</option>
+          <option value="2011-2015">2011-2015</option>
+          <option value="2016-2020">2016-2020</option>
+          <option value="2021-current">2021-current</option>
+        </select>
+      </th>
+      <th>
+        <select id="incomeFilter">
+          <option value="all">All</option>
+          <option value="0-1999">0-1999</option>
+          <option value="2000-3999">2000-3999</option>
+          <option value="4000-5999">4000-5999</option>
+          <option value="6000-7999">6000-7999</option>
+          <option value="8000+">8000+</option>
+        </select>
+      </th>
+      <th>
+        <select id="costFilter">
+          <option value="all">All</option>
+          <option value="0-1999">0-1999</option>
+          <option value="2000-3999">2000-3999</option>
+          <option value="4000-5999">4000-5999</option>
+          <option value="6000-7999">6000-7999</option>
+          <option value="8000+">8000+</option>
+        </select>
+      </th>
+      <th>
+        <select id="regionFilter">
+          <option value="all">All</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Africa">Africa</option>
+          <option value="Oceania">Oceania</option>
+          <option value="South America">South America</option>
+        </select>
+      </th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+  <script src="spending.js"></script>
+</body>
+</html>
+
+

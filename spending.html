@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Spending Dashboard</title>
+  <link rel="icon" type="image/jpeg" href="/images/earth.jpeg">
+  <link rel="stylesheet" href="spending.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!--This link is to create visualization for canvas workspace through CDN(Content Delivery Network) using Chart.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <!--This link is to read csv file using online website PapaParse-->
+  <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+  <!--Class added for applying CSS styling and id is for javascript to identify the element-->
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
+    <!--When click on the button, it will trigger JS function to hide the sidebar-->
+    <img src="/images/home.jpeg" class="logo" alt="Logo">
+    <!--Home Logo beside-->
+    <h2>Menu</h2>
+    <a href="spending.html">Dashboard</a>
+    <a href="history.html">Cost Table</a>
+    <!--connect the webpage to hyperlink-->
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content" id="mainContent">
+
+    <!-- Top Navbar -->
+    <div class="navbar">
+      <button class="open-btn" onclick="toggleSidebar()">☰</button>
+      <!--The button to open the sidebar-->
+      <div class="nav-left">
+        <h1>World Spending Dashboard</h1>
+      </div>
+      <div class="nav-right">
+        <select id="regionFilter">
+          <option value="all">All Regions</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Africa">Africa</option>
+          <option value="Oceania">Oceania</option>
+          <option value="South America">South America</option>
+        </select>
+      </div>
+    </div>
+    
+    <!-- Charts Grid -->
+    <div class="charts">
+      <div class="chart-card"><canvas id="barChart"></canvas></div>
+      <div class="chart-card"><canvas id="lineChart"></canvas></div>
+      <div class="chart-card"><canvas id="pieChart"></canvas></div>
+      <div class="chart-card" id="worldMap"></div>
+    </div>
+  </div>
+
+  <script src="spending.js"></script>
+</body>
+</html>
+
